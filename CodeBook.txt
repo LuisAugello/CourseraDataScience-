@@ -1,0 +1,20 @@
+x_test   Variable with the informatión of the file   'X_test.txt'
+y_test    Variable with the informatión of the file   'Y_test.txt'
+subject_test         Variable with the informatión of the file  'subject_test.txt'
+x_train    Variable with the informatión of the file   'X_train.txt'
+y_train    Variable with the informatión of the file   'Y_train.txt'
+subject_train   Variable with the informatión of the file   'subject_train.txt'
+
+M_test     Matrix or data frame that contain the information of the column      			subject_test,  y_test and x_test
+M_train    Matrix or data frame that contain the information of the column      	subject_train, 	y_train and x_train
+data_set   Data set that has the merge between the training and the test sets
+
+features   variable that has the information of the file "features.txt"
+where position in with the name's feature has the measure mean and std 
+interes_feaures the name of the features that has the measure mean and std
+data_set2  Data set that has the measurements on the mean and standard deviation 
+
+lavels  variable that has the activiti labels in the file "Activity_labels.txt"
+fea_Names  Vector with the names of everi label 1-6
+data_set3  Data frame that has independent tidy data set
+with the average of each variable for each activity and each subject
