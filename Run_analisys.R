@@ -18,22 +18,25 @@ data_set<-rbind(M_test,M_train)
 #reading the features data 
 features <- read.table("features.txt")
 #looking for the positions where features has an mean or std
-where<-grep("mean()|std()",features$V2)
+where<-grep("mean\\(\\)|std\\(\\)",features$V2)
 
 interes_feaures<-features[where,]
 data_set2<-data_set[,interes_feaures$V1]
 
 #3.Uses descriptive activity names to name the activities in the data set
-levels <- read.table("activity_labels.txt")
+labels <- read.table("activity_labels.txt")
 #the variable V1.1 in the data frame has the levels
 #so next step is putting the correspond name with the numbres 1-6 levels
-data_set2$V1.1 <- levels[data_set2$V1.1, 2]
+data_set2$V1.1 <- labels[data_set2$V1.1, 2]
 
 #4.Appropriately labels the data set with descriptive variable names.
 #let's create the vector with the names 
 fea_Names<-interes_feaures$V2
-colnames(data_set2) <- c("subject", "levels", fea_Names[1:77])
+colnames(data_set2) <- c("subject", "labels", fea_Names[1:64])
 
 #5. From the data set in step 4, creates a second, independent tidy data set
 #   with the average of each variable for each activity and each subject.
-data_set3<- aggregate(data_set2[, 3:ncol(data_set2)],by=list(subject = data_set2$subject,levels=data_set2$levels),mean)
+data_set3<- aggregate(data_set2[, 3:ncol(data_set2)],by=list(subject = data_set2$subject,labels=data_set2$labels),mean)
+
+
+write.table(data_set3, file = "./tidy_data.txt")
