@@ -34,3 +34,6 @@ Now we have all the files at the working directory (using the function “setwd(
 
 3.	You will need to have the data.table package 
 
+
+
+
