@@ -35,7 +35,7 @@ The analysis correspond to the fallowing questions:
 
 Now we have all the files at the working directory (using the function “setwd()”) so we can run the analysis from  “run_analysis.R”  in RStudio. 
 
-3.	You will need to have the data.table package 
+# You will need to have the data.table package 
 
 
 
